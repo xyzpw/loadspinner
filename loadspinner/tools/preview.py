@@ -8,4 +8,4 @@ for spinner in allSpinners:
     usrSpinner = loadspinner.Spinner(spinner)
     usrSpinner.start()
     sleep(2.5)
-    usrSpinner.stop(newline=True)
+    usrSpinner.stop(newline=False, clearline=True)

@@ -1,5 +1,12 @@
 # loadspinner
+![Pepy Total Downlods](https://img.shields.io/pepy/dt/loadspinner)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/loadspinner)
+![GitHub repo size](https://img.shields.io/github/repo-size/xyzpw/loadspinner)
+
 A CLI based loading spinner.
+
+> [!WARNING]
+> Code is subject to change
 
 ## Prerequisites
 - Terminal that accepts ANSI codes
