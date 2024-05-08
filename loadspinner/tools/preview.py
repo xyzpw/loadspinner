@@ -7,5 +7,5 @@ for spinner in allSpinners:
     print(spinner, "", end="")
     usrSpinner = loadspinner.Spinner(spinner)
     usrSpinner.start()
-    sleep(2.5)
+    sleep(1.67)
     usrSpinner.stop(newline=False, clearline=True)

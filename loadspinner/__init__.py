@@ -9,7 +9,7 @@ __all__ = [
     "Spinner",
 ]
 
-__version__ = "0.2"
+__version__ = "0.3"
 __description__ = "a CLI based loading spinner."
 __author__ = "xyzpw"
 __license__ = "MIT"

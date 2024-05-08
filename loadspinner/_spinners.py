@@ -8,7 +8,7 @@ all_spinners = {
         ],
         "interval": 1/4,
     },
-    "spinner": {
+    "slash": {
         "frames": ["|", "/", "\u2013", "\\"],
         "interval": 0.5/4,
     },
@@ -137,6 +137,21 @@ def generateSingleCharacterBounceSpinner(character: str, walls: tuple = ("|", "|
         frames.append(_)
     return frames
 
+def generateNewtonsCradle(character: str = "\u25cf", walls: tuple = ("|", "|")):
+    frames = []
+    for i in range(5, -1, -1):
+        currentFrame = f"{walls[0]}{' '*i}{character}{' '*(5-i)}{character*4}{' '*5}{walls[1]}"
+        frames.append(currentFrame)
+    for i in range(1, 6):
+        currentFrame = f"{walls[0]}{' '*i}{character}{' '*(5-i)}{character*4}{' '*5}{walls[1]}"
+        frames.append(currentFrame)
+    for i in range(1, 6):
+        currentFrame = f"{walls[0]}{' '*5}{character*4}{' '*i}{character}{' '*(5-i)}{walls[1]}"
+        frames.append(currentFrame)
+    for i in range(4, 0, -1):
+        currentFrame = f"{walls[0]}{' '*5}{character*4}{' '*i}{character}{' '*(5-i)}{walls[1]}"
+        frames.append(currentFrame)
+    return frames
 
 all_spinners["bouncingCircles"] = {
     "frames": generateBounceSpinner("\u25CF", ("(", ")")),
@@ -161,4 +176,8 @@ all_spinners["bouncingBar"] = {
 all_spinners["bouncingHeart"] = {
     "frames": generateSingleCharacterBounceSpinner("\u2665", ("|", "|")),
     "interval": 3/50,
+}
+all_spinners["newton"] = {
+    "frames": generateNewtonsCradle(),
+    "interval": 1/20,
 }
