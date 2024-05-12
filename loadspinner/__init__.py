@@ -7,9 +7,10 @@ import multiprocessing
 
 __all__ = [
     "Spinner",
+    "functionSpinner",
 ]
 
-__version__ = "0.3"
+__version__ = "0.4"
 __description__ = "a CLI based loading spinner."
 __author__ = "xyzpw"
 __license__ = "MIT"
@@ -20,6 +21,11 @@ class Spinner:
         self.frames = all_spinners[spinner_type]["frames"]
         self.interval = all_spinners[spinner_type]["interval"]
         self._process = None
+    def __enter__(self):
+        self.start()
+        return self
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.stop()
     def _changeCursorVisibility(self, visible: bool = True):
         print("\x1b[?25h" if visible else "\x1b[?25l", end="")
     def _createProcess(self, alive_time=None, hide_cursor: bool = True): # Not intended for user use
@@ -71,3 +77,11 @@ class Spinner:
             print(message, end="")
         if newline:
             print("\n", end="")
+
+def functionSpinner(spinner_type: str):
+    def func_wrapper(func):
+        def wrapper(*args, **kwargs):
+            with Spinner(spinner_type):
+                return func(*args, **kwargs)
+        return wrapper
+    return func_wrapper

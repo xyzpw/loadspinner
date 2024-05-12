@@ -58,11 +58,11 @@ all_spinners = {
         ],
         "interval": 1.5/16,
     },
-    "digit": {
+    "digits": {
         "frames": [],
         "interval": 1/4,
     },
-    "circleDigit": {
+    "circleDigits": {
         "frames": [],
         "interval": 1/4,
     },
@@ -96,16 +96,16 @@ for i in range(8, 28):
     else:
         _char = str(i - 16) if i <= 25 else chr(i + 39)
         currentChar = bytes("\\u" + "249" + _char, "utf-8").decode("unicode-escape")
-    all_spinners["digit"]["frames"].append(currentChar)
+    all_spinners["digits"]["frames"].append(currentChar)
 
 for i in range(16):
     _char = chr(55+i) if i > 9 else str(i)
     currentChar = bytes("\\u" + "246" + _char, "utf-8").decode("unicode-escape")
-    all_spinners["circleDigit"]["frames"].append(currentChar)
+    all_spinners["circleDigits"]["frames"].append(currentChar)
     if i == 15:
         for i2 in range(4):
             currentChar = bytes("\\u" + "247" + str(i2), "utf-8").decode("unicode-escape")
-            all_spinners["circleDigit"]["frames"].append(currentChar)
+            all_spinners["circleDigits"]["frames"].append(currentChar)
 
 def generateBounceSpinner(character: str, walls: tuple = (" ", " ")):
     frames = [

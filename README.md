@@ -5,18 +5,37 @@
 
 A CLI based loading spinner.
 
-> [!WARNING]
-> Code is subject to change
-
 ## Prerequisites
 - Terminal that accepts ANSI codes
 
 ## Usage
-Creating and using a spinner:
+Creating a spinner:
 ```python
 import loadspinner
 spinner = loadspinner.Spinner(spinner_type="classic")
-spinner.start() #starts the spinner
-spinner.stop() #stops the spinner
 ```
-Optionally, you can set a time limit for the spinner, e.g. `spinner.start(5) #5 seconds`.
+
+Starting the spinner:
+```python
+spinner.start() # starts the spinner
+spinner.stop() # stops the spinner
+```
+
+> [!HINT]
+> You can also assign a timer to spinners, e.g. `spinner.start(5)` will stop the spinner after 5 seconds.
+
+Usage with context managers:
+```python
+import loadspinner
+with loadspinner.Spinner("newton"):
+    input("press enter to stop ")
+```
+
+Usage with decorators:
+```python
+from loadspinner import functionSpinner
+@functionSpinner("building")
+def doWork():
+    # code...
+doWork()
+```
