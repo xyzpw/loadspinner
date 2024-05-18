@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.5 (2024-05-18)
+- ability to make spinners
+
 ## v0.4 (2024-05-12)
 - ability to use `with` function with spinner
 - added ability to use decorators

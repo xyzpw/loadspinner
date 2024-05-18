@@ -3,7 +3,9 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/loadspinner)
 ![GitHub repo size](https://img.shields.io/github/repo-size/xyzpw/loadspinner)
 
-A CLI based loading spinner.
+A CLI based loading spinner which is used to tell the user work is being done in the background.
+
+**Loadspinner** contains more than 20 spinners to choose from, and you can even create your own spinner.
 
 ## Prerequisites
 - Terminal that accepts ANSI codes
@@ -39,3 +41,14 @@ def doWork():
     # code...
 doWork()
 ```
+
+Spinners can be made or customized:
+```python
+import loadspinner
+loadspinner.makeSpinner(
+    name="myCustomSpinner",
+    frames=["a", "b", "c", "1", "2", "3"],
+    interval=200,
+)
+```
+The above code will create its own spinner which can be accessed as its own name, e.g. `loadspinner.Spinner("myCustomSpinner")`

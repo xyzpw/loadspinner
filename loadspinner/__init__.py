@@ -8,9 +8,10 @@ import multiprocessing
 __all__ = [
     "Spinner",
     "functionSpinner",
+    "makeSpinner",
 ]
 
-__version__ = "0.4"
+__version__ = "0.5"
 __description__ = "a CLI based loading spinner."
 __author__ = "xyzpw"
 __license__ = "MIT"
@@ -85,3 +86,16 @@ def functionSpinner(spinner_type: str):
                 return func(*args, **kwargs)
         return wrapper
     return func_wrapper
+
+def makeSpinner(name: str, frames: list, interval: int):
+    """Creates a custom spinner which can be used with specified name.
+
+    :param name: the name of which the spinner will be given
+    :param frames: the frames of which each will be printed to display the spinner
+    :param interval: the interval in milliseconds between each frame being printed"""
+    if not (isinstance(name, str) and isinstance(frames, list) and isinstance(interval, int)):
+        raise TypeError("invalid variable type")
+    all_spinners[name] = {
+        "frames": frames,
+        "interval": interval/1e3,
+    }
