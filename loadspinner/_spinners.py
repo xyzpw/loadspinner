@@ -28,6 +28,10 @@ all_spinners = {
         "frames": ["\u25A0", "\u25A1"],
         "interval": 0.5,
     },
+    "blinkingBenzene": {
+        "frames": ["\u232c", " "],
+        "interval": 0.5,
+    },
     "loadingCircle": {
         "frames": ["\u25D4", "\u25D1", "\u25D5", "\u25CF"],
         "interval": 1/3,

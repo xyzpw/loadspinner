@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.6 (2024-06-01)
+- new spinner: blinkingBenzene
+
 ## v0.5 (2024-05-18)
 - ability to make spinners
 

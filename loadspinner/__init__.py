@@ -11,7 +11,7 @@ __all__ = [
     "makeSpinner",
 ]
 
-__version__ = "0.5"
+__version__ = "0.6"
 __description__ = "a CLI based loading spinner."
 __author__ = "xyzpw"
 __license__ = "MIT"
